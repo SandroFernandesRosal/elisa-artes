@@ -1,7 +1,5 @@
-
-
 import CarouselFilters from '@/components/carousel-filters'
-import CarouselInvitations from '@/components/Carousel-invitations'
+import CarouselInvitations from '@/components/carousel-invitations'
 
 import CarouselMemories from '@/components/carousel-memories'
 import CarouselSaveDate from '@/components/carousel-savedate'
