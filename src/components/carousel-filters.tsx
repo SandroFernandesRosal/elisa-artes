@@ -1,7 +1,7 @@
 'use client'
 import { InvitationProps, InvitationArray } from '@/data/types/invitation'
-import React from 'react'
-import {CornerRightDown } from 'lucide-react'
+
+import { CornerRightDown } from 'lucide-react'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -46,8 +46,15 @@ export default function CarouselFilters({ products }: InvitationArray) {
   }
   return (
     <div className="w-[80vw]   pt-10">
-        <div className='flex justify-between items-center px-2 py-5'><h1 className=" text-3xl font-bold mb-4 border-l-8 pl-2 border-primary rounded-lg">Filtros</h1> <p className='flex gap-2 hover:text-primary cur text-lg items-center'>Ver todos <CornerRightDown size={32} /> </p></div>
-        
+      <div className="flex justify-between items-center px-2 py-5">
+        <h1 className=" text-3xl font-bold mb-4 border-l-8 pl-2 border-primary rounded-lg">
+          Filtros
+        </h1>{' '}
+        <p className="flex gap-2 hover:text-primary cur text-lg items-center">
+          Ver todos <CornerRightDown size={32} />{' '}
+        </p>
+      </div>
+
       <Slider {...settings}>
         {products.map((item: InvitationProps) => {
           return (
@@ -68,9 +75,7 @@ export default function CarouselFilters({ products }: InvitationArray) {
               </div>
 
               <div className=" flex  flex-col justify-between h-[35%]  items-center  py-1">
-                <p className="font-semibold text-center">
-                  {item.title}
-                </p>
+                <p className="font-semibold text-center">{item.title}</p>
 
                 <span className="flex  items-center  rounded-full bg-primary px-4 font-semibold">
                   {item.price.toLocaleString('pt-BR', {
@@ -88,5 +93,3 @@ export default function CarouselFilters({ products }: InvitationArray) {
     </div>
   )
 }
-
-
