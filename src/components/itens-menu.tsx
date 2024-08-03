@@ -35,7 +35,7 @@ export default function ItensMenu({ menu, handleMenu }: MenuProps) {
           href={'/'}
           className="border-l-8  border-primary pl-2 rounded-md my-2 md:border-none md:pl-0 md:my-0 "
         >
-          Save-to-date
+          Save the date
         </Link>
       </li>
       <li className="hover:bg-bglight dark:hover:bg-bgdark pl-2 cursor-pointer md:hover:bg-transparent">

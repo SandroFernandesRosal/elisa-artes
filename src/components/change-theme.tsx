@@ -24,8 +24,8 @@ export default function ChangeTheme() {
       }
       onColor={'#E4E4E7'}
       offColor={'#262626'}
-      onHandleColor={'#10B981'}
-      offHandleColor={'#10B981'}
+      onHandleColor={'#e496c1'}
+      offHandleColor={'#e496c1'}
       activeBoxShadow={'0 0 1px 2px #70a1e0'}
     />
   )

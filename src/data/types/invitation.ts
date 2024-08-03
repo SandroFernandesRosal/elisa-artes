@@ -13,5 +13,5 @@ export interface InvitationProps {
 }
 
 export interface InvitationArray {
-  projects: InvitationProps[]
+  products: InvitationProps[]
 }
