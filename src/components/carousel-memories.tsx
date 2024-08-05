@@ -48,7 +48,7 @@ export default function CarouselMemories({ products }: InvitationArray) {
     <div className="w-[80vw]   pt-10">
       <div className="flex justify-between items-center px-2 py-5">
         <h1 className=" text-3xl font-bold mb-4 border-l-8 pl-2 border-primary rounded-lg">
-          Lembranças
+          Lembretes
         </h1>{' '}
         <p className="flex gap-2 hover:text-primary cur text-lg items-center">
           Ver todos <CornerRightDown size={32} />{' '}
@@ -60,7 +60,7 @@ export default function CarouselMemories({ products }: InvitationArray) {
           return (
             <div
               key={item.id}
-              className="bg-bglightsecundary rounded-lg dark:bg-bgdarksecundary h-[400px] flex "
+              className="bg-bglightsecundary rounded-lg dark:bg-bgdarksecundary h-[400px]  shadow-shadowlight dark:shadow-none flex dark:border-[1px] dark:border-zinc-800 my-1 hover:border-primary hover:border-[1px] border-transparent"
             >
               <div className="h-[65%] ">
                 {item.image && (

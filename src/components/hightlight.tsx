@@ -19,7 +19,7 @@ async function getFeaturedProducts(): Promise<InvitationProps[]> {
 export default async function Highlights() {
   const [highLightedProduct, ...otherProducts] = await getFeaturedProducts()
   return (
-    <div className="grid  lg:grid-cols-9 lg:grid-rows-6 gap-4 pt-8">
+    <div className="grid  lg:grid-cols-9 lg:grid-rows-6 gap-4 pt-8 md:pt-12">
       <Link
         href={`/product/${highLightedProduct.slug}`}
         className=" group relative  col-span-6 row-span-6 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary  "

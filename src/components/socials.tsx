@@ -8,18 +8,18 @@ export default function Socials() {
         href={'https://api.whatsapp.com/send?phone=5521969501614'}
         target="blank"
       >
-        <FaWhatsapp className="text-xl " />
+        <FaWhatsapp className="text-xl hover:text-primary" />
       </Link>
 
       <Link href={'https://github.com/SandroFernandesRosal'} target="blank">
-        <FaInstagram className="text-xl " />
+        <FaInstagram className="text-xl hover:text-primary" />
       </Link>
 
       <Link
         href={'https://www.linkedin.com/in/sandrofernandesrosal'}
         target="blank"
       >
-        <FaFacebookSquare className="text-xl " />
+        <FaFacebookSquare className="text-xl hover:text-primary" />
       </Link>
     </div>
   )

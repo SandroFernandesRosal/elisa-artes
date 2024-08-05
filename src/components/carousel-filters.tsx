@@ -60,7 +60,7 @@ export default function CarouselFilters({ products }: InvitationArray) {
           return (
             <div
               key={item.id}
-              className="bg-bglightsecundary rounded-lg dark:bg-bgdarksecundary h-[400px] flex "
+              className="bg-bglightsecundary rounded-lg dark:bg-bgdarksecundary h-[400px] shadow-shadowlight dark:shadow-none flex dark:border-[1px] dark:border-zinc-800 my-1 hover:border-primary hover:border-[1px] border-transparent"
             >
               <div className="h-[65%] ">
                 {item.image && (

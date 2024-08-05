@@ -32,7 +32,7 @@ export default function Menu() {
       <Opacity menu={menu} />
 
       <div
-        className={`fixed top-[70px]  right-0 z-30 flex min-h-screen w-[70%] shadow-shadowlight dark:shadow-shadowdark transform rounded-l-xl flex-col items-center pt-5 gap-10 bg-bglightsecundary dark:bg-bgdarksecundary font-bold backdrop-blur-md transition-transform duration-300 md:hidden ${
+        className={`fixed top-[110px]  right-0 z-30 flex min-h-screen w-[70%] shadow-shadowlight dark:border-l-[1px] dark:border-t-[1px] dark:border-zinc-800 transform rounded-l-xl flex-col items-center pt-5 gap-10 bg-bglightsecundary dark:bg-bgdarksecundary font-bold backdrop-blur-md transition-transform duration-300 md:hidden ${
           menu ? 'translate-x-0 ' : 'translate-x-full'
         }`}
       >
