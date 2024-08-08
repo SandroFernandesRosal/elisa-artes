@@ -21,7 +21,7 @@ export default async function Highlights() {
   return (
     <div className="grid  lg:grid-cols-9 lg:grid-rows-6 gap-4 pt-8 md:pt-12">
       <Link
-        href={`/product/${highLightedProduct.slug}`}
+        href={`/convites/${highLightedProduct.slug}`}
         className=" group relative  col-span-6 row-span-6 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary  "
       >
         {highLightedProduct.image && (
@@ -52,7 +52,7 @@ export default async function Highlights() {
         return (
           <Link
             key={product.id}
-            href={`/product/${product.slug}`}
+            href={`/convites/${product.slug}`}
             className="group relative col-span-3 row-span-3 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:shadow-shadowfooterdark dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary  "
           >
             {product.image && (
