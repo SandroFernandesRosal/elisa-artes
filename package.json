@@ -23,7 +23,8 @@
     "swiper": "^11.1.9",
     "swiper-react": "^1.0.0",
     "tailwind-merge": "^2.4.0",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",

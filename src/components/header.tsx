@@ -1,11 +1,10 @@
-import Link from 'next/link'
-import Image from 'next/image'
 import Menu from './menu'
 import ChangeTheme from './change-theme'
 import ItensMenu from './itens-menu'
 import Socials from './socials'
 import SearchForm from './search-form'
-import logo from '../../public/elisa-logo.png'
+
+import Logo from './logo'
 
 export default function Header() {
   return (
@@ -17,9 +16,7 @@ export default function Header() {
         <Socials />
       </nav>
       <div className="flex items-center justify-around gap-2 w-full">
-        <Link href={'/'}>
-          <Image src={logo} alt="logo" height={80} width={80} />
-        </Link>
+        <Logo />
 
         <SearchForm />
 

@@ -7,6 +7,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function CarouselInvitations({ products }: InvitationArray) {
   const settings = {
@@ -58,7 +59,8 @@ export default function CarouselInvitations({ products }: InvitationArray) {
       <Slider {...settings}>
         {products.map((item: InvitationProps) => {
           return (
-            <div
+            <Link
+              href={`/convites/${item.slug}`}
               key={item.id}
               className="bg-bglightsecundary rounded-lg dark:bg-bgdarksecundary h-[400px] shadow-shadowlight dark:shadow-none flex dark:border-[1px] dark:border-zinc-800 my-1 hover:border-primary hover:border-[1px] border-transparent"
             >
@@ -86,7 +88,7 @@ export default function CarouselInvitations({ products }: InvitationArray) {
                   })}
                 </span>
               </div>
-            </div>
+            </Link>
           )
         })}
       </Slider>
