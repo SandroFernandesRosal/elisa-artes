@@ -11,6 +11,6 @@ export interface FilterProps {
   featured: boolean
 }
 
-export interface InvitationArray {
+export interface FilterArray {
   products: FilterProps[]
 }

@@ -1,13 +1,11 @@
 'use client'
-import { InvitationProps, InvitationArray } from '@/data/types/invitation'
+import { FilterProps, FilterArray } from '@/data/types/filter'
 import { useState } from 'react'
-import { useDisplay, useSize } from '@/store/useStore'
+import { useDisplay } from '@/store/useStore'
 import { MdArrowBack, MdArrowForward } from 'react-icons/md'
+import ProjectLine from './project-line'
 
-import Image from 'next/image'
-import Link from 'next/link'
-
-export default function InvitationsLine({ products }: InvitationArray) {
+export default function FiltersLine({ products }: FilterArray) {
   const { display } = useDisplay()
 
   const [offset, setOffset] = useState(0)
@@ -17,13 +15,13 @@ export default function InvitationsLine({ products }: InvitationArray) {
   const projectsPerPage = 6
 
   const filteredProjects = products.filter(
-    (project: InvitationProps) => project.title,
+    (project: FilterProps) => project.title,
   )
 
   const displayedProjects =
-    display === 'featured'
+    display === 'destaque'
       ? filteredProjects.filter(
-          (project: InvitationProps) => project.featured === true,
+          (project: FilterProps) => project.featured === true,
         )
       : filteredProjects
 
@@ -54,40 +52,19 @@ export default function InvitationsLine({ products }: InvitationArray) {
     (displayCurrentPage - 1) * projectsPerPage,
     displayCurrentPage * projectsPerPage,
   )
-  const { size } = useSize()
+
   return (
     <>
       <ul className="flex flex-wrap gap-5 justify-center w-full">
-        {projectsToDisplay.map((project: InvitationProps) => (
-          <div
-            className={`w-[47%] max-w-[200px] h-[400px] gap-2 pb-2 flex  flex-col  dark:bg-bgdarksecundary bg-bglightsecundary shadow shadow-gray-500 rounded-md dark:shadow-none dark:border-[1px] dark:border-zinc-800 hover:border-primary  dark:hover:border-primary hover:border-[1px]  ${size === 'large' && 'w-[98%] max-w-[400px] h-[650px] justify-between'} ${size === 'small' && 'h-[150px] justify-between py-3 md:py-6 min-w-[100px] w-[25%] md:max-w-[150px] '} ${size === 'normal' && 'h-[400px] w-[45%] gap-2 md:gap-5'}`}
+        {projectsToDisplay.map((project: FilterProps) => (
+          <ProjectLine
             key={project.id}
-          >
-            <Link href={`/product/${project.slug}`} className="group ">
-              {project.image && (
-                <Image
-                  src={project.image}
-                  width={500}
-                  height={500}
-                  alt={project.title}
-                  className="group-hover:scale-105  transition-transform duration-500 h-[270px]"
-                />
-              )}
-            </Link>
-            <Link href={`/product/${project.slug}`}>
-              <p className=" text-center px-1">{project.title}</p>
-            </Link>
-            <div className="flex flex-col  md:flex-row justify-end md:items-end h-full md:justify-evenly gap-2 mx-2 items-center">
-              <span className="flex  items-center justify-center rounded-full bg-primary px-4 font-semibold">
-                {project.price.toLocaleString('pt-BR', {
-                  style: 'currency',
-                  currency: 'BRL',
-                  minimumFractionDigits: 0,
-                  maximumFractionDigits: 0,
-                })}
-              </span>
-            </div>{' '}
-          </div>
+            page="filtros"
+            slug={project.slug}
+            title={project.title}
+            image={project.image}
+            price={project.price}
+          />
         ))}
       </ul>
 

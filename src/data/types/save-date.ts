@@ -12,6 +12,6 @@ export interface SaveDateProps {
   featured: boolean
 }
 
-export interface InvitationArray {
+export interface SaveDateArray {
   products: SaveDateProps[]
 }

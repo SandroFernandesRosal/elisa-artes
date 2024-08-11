@@ -12,6 +12,6 @@ export interface MemoryProps {
   featured: boolean
 }
 
-export interface InvitationArray {
+export interface MemoryArray {
   products: MemoryProps[]
 }
