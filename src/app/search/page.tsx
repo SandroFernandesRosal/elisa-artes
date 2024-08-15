@@ -1,9 +1,8 @@
-import Link from 'next/link'
-import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import { api } from '@/data/api'
 import { InvitationProps } from '@/data/types/invitation'
 import { Metadata } from 'next'
+import ProjectLine from '@/components/project-line'
 
 interface SearchProps {
   searchParams: {
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 }
 
 async function searchProducts(query: string): Promise<InvitationProps[]> {
-  const response = await api(`/products/search?q=${query}`, {
+  const response = await api(`/invitations/search?q=${query}`, {
     next: {
       revalidate: 60 * 60,
     },
@@ -37,44 +36,23 @@ export default async function Search({ searchParams }: SearchProps) {
   const products = await searchProducts(query)
 
   return (
-    <div className="flex flex-col gap-4 pt-20 px-8 min-h-screen">
+    <div className="flex flex-col gap-4 pt-40  min-h-screen w-full">
       <p className="text-sm text-center">
         Resultado Para: <span className="font-semibold">{query}</span>
       </p>
 
       <div className="flex flex-wrap justify-center gap-4">
-        {products.map((product) => {
+        {products.map((project) => {
           return (
-            <div
-              className=" w-[47%] max-w-[200px] gap-2 pb-2 flex  flex-col pt-2  lg:w-[200px] dark:bg-bgdarksecundary bg-bglightsecundary shadow shadow-gray-500 rounded-md dark:shadow-shadowfooterdark  "
-              key={product.id}
-            >
-              <Link href={`/product/${product.slug}`} className="group">
-                {' '}
-                {product.image && (
-                  <Image
-                    src={product.image}
-                    width={500}
-                    height={500}
-                    alt={product.title}
-                    className="group-hover:scale-105 transition-transform duration-500"
-                  />
-                )}
-              </Link>
-              <Link href={`/product/${product.slug}`}>
-                <p className=" text-center px-1">{product.title}</p>
-              </Link>
-              <div className="flex flex-col  md:flex-row justify-end md:items-end h-full md:justify-evenly gap-2 mx-2 items-center">
-                <span className="flex  items-center justify-center rounded-full bg-primary px-4 font-semibold">
-                  {product.price.toLocaleString('pt-BR', {
-                    style: 'currency',
-                    currency: 'BRL',
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0,
-                  })}
-                </span>
-              </div>{' '}
-            </div>
+            <ProjectLine
+              key={project.id}
+              page="convites"
+              slug={project.slug}
+              title={project.title}
+              image={project.image}
+              price={project.price}
+              video={project.video}
+            />
           )
         })}
       </div>

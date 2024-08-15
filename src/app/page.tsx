@@ -8,7 +8,7 @@ import Highlights from '@/components/hightlight'
 import { api } from '@/data/api'
 
 export default async function Home() {
-  const response = await api('/products', {
+  const response = await api('/invitations', {
     next: {
       revalidate: 1,
     },

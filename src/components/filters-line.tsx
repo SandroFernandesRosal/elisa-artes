@@ -64,6 +64,7 @@ export default function FiltersLine({ products }: FilterArray) {
             title={project.title}
             image={project.image}
             price={project.price}
+            video={project.video}
           />
         ))}
       </ul>

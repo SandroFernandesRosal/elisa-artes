@@ -12,7 +12,7 @@ interface ProductProps {
 }
 
 async function getProduct(slug: string): Promise<InvitationProps> {
-  const response = await api(`/products/${slug}`, {
+  const response = await api(`/invitations/${slug}`, {
     next: {
       revalidate: 60 * 60,
     },
@@ -36,8 +36,8 @@ export async function generateMetadata({
 export default async function ProductPage({ params }: ProductProps) {
   const product = await getProduct(params.slug)
   return (
-    <div className="relative lg:grid  lg:grid-cols-3 gap-4 flex md:items-center flex-col pt-[100px] overflow-hidden">
-      <div className="lg:col-span-2 overflow-hidden">
+    <div className="relative min-h-screen my-8 lg:grid  lg:grid-cols-3 gap-4 flex md:items-center flex-col-reverse pt-[100px] overflow-hidden">
+      <div className="lg:col-span-2 overflow-hidden flex justify-center mx-5">
         {product.image && (
           <Image
             src={product.image}
@@ -47,6 +47,25 @@ export default async function ProductPage({ params }: ProductProps) {
             quality={100}
             className=""
           />
+        )}
+
+        {product.video && (
+          <video
+            width="500"
+            height="500"
+            controls
+            preload="true"
+            className="group-hover:scale-105  transition-transform duration-500 mx-[5%] "
+          >
+            <source src={product.video} type="video/mp4" />
+            <track
+              src={product.video}
+              kind="subtitles"
+              srcLang="pt-br"
+              label="Portuguese"
+            />
+            Your browser does not support the video tag.
+          </video>
         )}
       </div>
       <div className="flex flex-col justify-center px-12 pb-5">

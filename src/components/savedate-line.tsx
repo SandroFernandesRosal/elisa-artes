@@ -64,6 +64,7 @@ export default function SaveDateLine({ products }: SaveDateArray) {
             title={project.title}
             image={project.image}
             price={project.price}
+            video={project.video}
           />
         ))}
       </ul>

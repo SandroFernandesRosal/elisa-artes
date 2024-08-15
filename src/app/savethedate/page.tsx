@@ -6,7 +6,7 @@ import SizeProject from '@/components/size-project'
 import SaveDateLine from '@/components/savedate-line'
 
 export default async function SaveDatePage() {
-  const response = await api('/products', {
+  const response = await api('/invitations', {
     next: {
       revalidate: 1 * 1,
     },

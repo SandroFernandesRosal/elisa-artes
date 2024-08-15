@@ -3,9 +3,9 @@ import { InvitationProps } from '@/data/types/invitation'
 import Project from './project'
 
 export default async function Invitations() {
-  const response = await api('/products', {
+  const response = await api('/invitations', {
     next: {
-      revalidate: 1,
+      revalidate: 1 * 1,
     },
   })
 
@@ -27,6 +27,7 @@ export default async function Invitations() {
               price={product.price}
               image={product.image}
               slug={product.slug}
+              video={product.video}
             />
           )
         })}

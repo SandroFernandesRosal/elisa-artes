@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 async function getFeaturedProducts(): Promise<InvitationProps[]> {
-  const response = await api('/products/featured', {
+  const response = await api('/invitations/featured', {
     next: {
       revalidate: 1,
     },
@@ -33,6 +33,25 @@ export default async function Highlights() {
             alt=""
             quality={100}
           />
+        )}
+
+        {highLightedProduct.video && (
+          <video
+            width="500"
+            height="500"
+            controls
+            preload="true"
+            className="group-hover:scale-105  transition-transform duration-500 h-[270px]"
+          >
+            <source src={highLightedProduct.video} type="video/mp4" />
+            <track
+              src={highLightedProduct.video}
+              kind="subtitles"
+              srcLang="pt-br"
+              label="Portuguese"
+            />
+            Your browser does not support the video tag.
+          </video>
         )}
 
         <div className="absolute bottom-10 right-0 h-12 mr-2 flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-5">
@@ -64,6 +83,25 @@ export default async function Highlights() {
                 alt=""
                 quality={100}
               />
+            )}
+
+            {product.video && (
+              <video
+                width="500"
+                height="500"
+                controls
+                preload="true"
+                className="group-hover:scale-105  transition-transform duration-500 h-[270px]"
+              >
+                <source src={product.video} type="video/mp4" />
+                <track
+                  src={product.video}
+                  kind="subtitles"
+                  srcLang="pt-br"
+                  label="Portuguese"
+                />
+                Your browser does not support the video tag.
+              </video>
             )}
 
             <div className="absolute bottom-5 right-0 md:h-12 h-8 flex items-center gap-2 max-w-[280px] w-[90%] mr-2 justify-between rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-5">

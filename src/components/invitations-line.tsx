@@ -64,6 +64,7 @@ export default function InvitationsLine({ products }: InvitationArray) {
             title={project.title}
             image={project.image}
             price={project.price}
+            video={project.video}
           />
         ))}
       </ul>

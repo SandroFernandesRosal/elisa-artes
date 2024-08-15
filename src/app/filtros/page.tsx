@@ -5,7 +5,7 @@ import SizeProject from '@/components/size-project'
 import FiltersLine from '@/components/filters-line'
 
 export default async function FiltersPage() {
-  const response = await api('/products', {
+  const response = await api('/invitations', {
     next: {
       revalidate: 1 * 1,
     },

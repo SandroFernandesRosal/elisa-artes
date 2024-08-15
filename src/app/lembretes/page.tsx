@@ -5,7 +5,7 @@ import SizeProject from '@/components/size-project'
 import MemoriesLine from '@/components/memories-line'
 
 export default async function MemoriesPage() {
-  const response = await api('/products', {
+  const response = await api('/invitations', {
     next: {
       revalidate: 1 * 1,
     },
