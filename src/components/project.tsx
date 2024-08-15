@@ -20,7 +20,7 @@ export default function Project({
 }: Projectprops) {
   return (
     <div className="flex flex-col">
-      <div className="h-full group my-2 border-zinc-300 dark:border-zinc-800 dark:border-[1px] shadow-shadowlight  dark:shadow-none hover:border-[1px] border-transparent ">
+      <div className="h-full group my-2 lg:my-4 border-zinc-300 dark:border-zinc-800 dark:border-[1px] shadow-shadowlight  dark:shadow-none hover:border-[1px] border-transparent">
         {image && (
           <Image
             src={image}
