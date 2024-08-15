@@ -14,7 +14,7 @@ interface ProductProps {
 async function getProduct(slug: string): Promise<InvitationProps> {
   const response = await api(`/invitations/${slug}`, {
     next: {
-      revalidate: 60 * 60,
+      revalidate: 1 * 1,
     },
   })
 

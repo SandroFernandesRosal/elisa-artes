@@ -28,7 +28,7 @@ export default function Project({
             width={1000}
             height={1000}
             quality={100}
-            className=""
+            className=" "
           />
         )}
         {video && (
