@@ -5,9 +5,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 async function getFeaturedProducts(): Promise<InvitationProps[]> {
-  const response = await api('/invitations/featured', {
+  const response = await api('/highlight/featured', {
     next: {
-      revalidate: 1,
+      revalidate: 1 * 1,
     },
   })
 
@@ -27,7 +27,7 @@ export default async function Highlights() {
         {highLightedProduct.image && (
           <Image
             src={highLightedProduct.image}
-            className="group-hover:scale-105 transition-transform duration-500 md:w-[70%] lg:w-[90%]"
+            className="group-hover:scale-105 transition-transform duration-500 w-full"
             width={920}
             height={920}
             alt=""
@@ -41,7 +41,7 @@ export default async function Highlights() {
             height="500"
             controls
             preload="true"
-            className="group-hover:scale-105  transition-transform duration-500 h-[270px]"
+            className="group-hover:scale-105  transition-transform duration-500 w-full "
           >
             <source src={highLightedProduct.video} type="video/mp4" />
             <track
@@ -77,7 +77,7 @@ export default async function Highlights() {
             {product.image && (
               <Image
                 src={product.image}
-                className="group-hover:scale-105 transition-transform duration-500 md:w-[70%] lg:w-[90%]"
+                className="group-hover:scale-105 transition-transform duration-500 w-full"
                 width={920}
                 height={920}
                 alt=""
@@ -91,7 +91,7 @@ export default async function Highlights() {
                 height="500"
                 controls
                 preload="true"
-                className="group-hover:scale-105  transition-transform duration-500 h-[270px]"
+                className="group-hover:scale-105  transition-transform duration-500 w-full"
               >
                 <source src={product.video} type="video/mp4" />
                 <track

@@ -6,7 +6,31 @@
     margin: 0 6px;
 }
 
+.slick-prev:before {
+    
+    color: #e496c1 !important;
+    
+  }
+  
+  .slick-next:before {
+    
+    color: #e496c1 !important;
+    
+  }
 
+  .slick-dots li.slick-active button:before
+{
+    
+    color: #e496c1 !important;
+}
+
+.slick-dots li button:before
+{
+    
+    color: #e496c1 !important;
+
+  
+}
 
 
 @layer base{
@@ -14,4 +38,6 @@
         @apply dark:bg-bgdark bg-bglight dark:text-textdark text-textlight font-Roboto
         
     }
+
+    
   }
