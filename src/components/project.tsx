@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+
 import { Suspense } from 'react'
 
 export interface Projectprops {
@@ -22,22 +22,13 @@ export default function Project({
   return (
     <Suspense fallback={<div>Carregando...</div>}>
       <div className="h-full my-2 lg:my-4 border-zinc-300 dark:border-zinc-800 dark:border-[1px] shadow-shadowlight  dark:shadow-none hover:border-[1px] border-transparent group">
-        {image && (
-          <Image
-            src={image}
-            alt=""
-            width={1000}
-            height={1000}
-            quality={100}
-            className=" "
-          />
-        )}
         {video && (
           <video
             width="500"
             height="500"
             controls
-            preload="true"
+            poster={`${image}`}
+            preload="false"
             className="group-hover:scale-105  transition-transform duration-500"
           >
             <source src={video} type="video/mp4" />

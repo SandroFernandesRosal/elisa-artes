@@ -24,23 +24,13 @@ export default async function Highlights() {
         href={`/convites/${highLightedProduct.slug}`}
         className=" group relative  col-span-6 row-span-6 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary  "
       >
-        {highLightedProduct.image && (
-          <Image
-            src={highLightedProduct.image}
-            className="group-hover:scale-105 transition-transform duration-500 w-full"
-            width={920}
-            height={920}
-            alt=""
-            quality={100}
-          />
-        )}
-
         {highLightedProduct.video && (
           <video
             width="500"
             height="500"
             controls
-            preload="true"
+            poster={`${highLightedProduct.image}`}
+            preload="false"
             className="group-hover:scale-105  transition-transform duration-500 w-full "
           >
             <source src={highLightedProduct.video} type="video/mp4" />
