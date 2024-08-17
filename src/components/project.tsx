@@ -4,7 +4,7 @@ import { Suspense } from 'react'
 
 export interface Projectprops {
   page: string
-  image: string | null
+  image: string
   title: string
   slug: string
   price: number
@@ -27,7 +27,7 @@ export default function Project({
             width="500"
             height="500"
             controls
-            poster={`${image}`}
+            poster={image}
             preload="false"
             className="group-hover:scale-105  transition-transform duration-500"
           >

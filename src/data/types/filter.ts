@@ -4,7 +4,7 @@ export interface FilterProps {
   theme: string
   category: string
   description: string
-  image: string | null
+  image: string
   video: string | null
   price: number
   slug: string

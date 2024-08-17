@@ -4,7 +4,7 @@ export interface MemoryProps {
   theme: string
   category: string
   description: string
-  image: string | null
+  image: string
   video: string | null
   age: 'baby' | 'child' | '15age' | 'adult'
   price: number
