@@ -29,8 +29,8 @@ export default async function Highlights() {
             width="500"
             height="500"
             controls
-            poster={`${highLightedProduct.image}`}
-            preload="false"
+            poster={highLightedProduct.image}
+            preload="metadata"
             className="group-hover:scale-105  transition-transform duration-500 w-full "
           >
             <source src={highLightedProduct.video} type="video/mp4" />
@@ -82,7 +82,7 @@ export default async function Highlights() {
                 width="500"
                 height="500"
                 controls
-                preload="true"
+                preload="metadata"
                 className="group-hover:scale-105  transition-transform duration-500 w-full"
               >
                 <source src={product.video} type="video/mp4" />
