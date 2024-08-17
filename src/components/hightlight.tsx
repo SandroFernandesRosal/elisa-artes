@@ -54,8 +54,10 @@ export default async function Highlights() {
           </video>
         )}
 
-        <div className="absolute bottom-10 right-0 h-12 mr-2 flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-5">
-          <span className="text-sm truncate">{highLightedProduct.title}</span>
+        <div className="absolute bottom-10  h-12  flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-2 ">
+          <span className="text-sm truncate font-bold">
+            {highLightedProduct.title}
+          </span>
           <span className="flex h-full items-center justify-center rounded-full bg-primary px-4 font-semibold">
             {highLightedProduct.price.toLocaleString('pt-BR', {
               style: 'currency',
@@ -104,8 +106,11 @@ export default async function Highlights() {
               </video>
             )}
 
-            <div className="absolute bottom-5 right-0 md:h-12 h-8 flex items-center gap-2 max-w-[280px] w-[90%] mr-2 justify-between rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-5">
-              <span className="text-sm truncate">{product.title}</span>
+            <div className="absolute bottom-5  md:h-12 h-8 flex items-center gap-2 max-w-[280px]  w-[95%] md:w-[100%] justify-between rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-2">
+              <span className="text-sm truncate font-bold">
+                {product.title}
+              </span>
+
               <span className="flex h-full items-center justify-center rounded-full bg-primary px-4 font-semibold">
                 {product.price.toLocaleString('pt-BR', {
                   style: 'currency',
