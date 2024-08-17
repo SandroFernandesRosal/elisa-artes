@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Suspense } from 'react'
 
 export interface Projectprops {
   page: string
@@ -19,8 +20,8 @@ export default function Project({
   video,
 }: Projectprops) {
   return (
-    <div className="flex flex-col">
-      <div className="h-full group my-2 lg:my-4 border-zinc-300 dark:border-zinc-800 dark:border-[1px] shadow-shadowlight  dark:shadow-none hover:border-[1px] border-transparent">
+    <Suspense fallback={<div>Carregando...</div>}>
+      <div className="h-full my-2 lg:my-4 border-zinc-300 dark:border-zinc-800 dark:border-[1px] shadow-shadowlight  dark:shadow-none hover:border-[1px] border-transparent group">
         {image && (
           <Image
             src={image}
@@ -66,6 +67,6 @@ export default function Project({
           <button>Saiba mais</button>
         </Link>
       </div>
-    </div>
+    </Suspense>
   )
 }
