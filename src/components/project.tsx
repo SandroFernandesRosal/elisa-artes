@@ -28,7 +28,7 @@ export default function Project({
             height="500"
             controls
             poster={image}
-            preload="false"
+            preload="none"
             className="group-hover:scale-105  transition-transform duration-500"
           >
             <source src={video} type="video/mp4" />
