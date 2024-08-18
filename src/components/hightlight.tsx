@@ -44,11 +44,24 @@ export default async function Highlights() {
           </video>
         )}
 
+        <div className="absolute top-10  flex flex-col  gap-2    p-1 pl-2 ">
+          <h1 className="text-3xl  font-bold">Faço qualquer tema</h1>
+
+          <div className="flex flex-col gap-2 text-black ">
+            <button className="flex p-1 items-center justify-center rounded-full bg-primary  font-semibold">
+              Ver esse tema
+            </button>
+            <button className="flex p-1 items-center justify-center rounded-full bg-primary  font-semibold">
+              Ver todos os convites
+            </button>
+          </div>
+        </div>
+
         <div className="absolute bottom-10  h-12  flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-2 ">
           <span className="text-sm truncate font-bold">
             {highLightedProduct.title}
           </span>
-          <span className="flex h-full items-center justify-center rounded-full bg-primary px-4 font-semibold">
+          <span className="flex h-full items-center justify-center rounded-full bg-primary px-4 font-semibold text-black ">
             {highLightedProduct.price.toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL',

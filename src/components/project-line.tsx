@@ -4,7 +4,7 @@ import { useSize } from '@/store/useStore'
 
 export interface Projectprops {
   page: string
-  image: string | null
+  image: string
   title: string
   slug: string
   price: number
@@ -13,7 +13,7 @@ export interface Projectprops {
 
 export default function ProjectLine({
   page,
-
+  image,
   title,
   slug,
   price,
@@ -30,7 +30,8 @@ export default function ProjectLine({
             width="500"
             height="500"
             controls
-            preload="true"
+            poster={image}
+            preload="metadata"
             className="group-hover:scale-105  transition-transform duration-500"
           >
             <source src={video} type="video/mp4" />
