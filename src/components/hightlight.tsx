@@ -21,24 +21,15 @@ export default async function Highlights() {
   return (
     <div className="grid  lg:grid-cols-9 lg:grid-rows-6 gap-4 pt-8 md:pt-12">
       <div className=" group relative  col-span-6 row-span-6 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary  ">
-        {highLightedProduct.video && (
-          <video
-            width="500"
-            height="500"
-            controls
-            poster={highLightedProduct.image}
-            preload="metadata"
-            className="group-hover:scale-105  transition-transform duration-500 w-full "
-          >
-            <source src={highLightedProduct.video} type="video/mp4" />
-            <track
-              src={highLightedProduct.video}
-              kind="subtitles"
-              srcLang="pt-br"
-              label="Portuguese"
-            />
-            Your browser does not support the video tag.
-          </video>
+        {highLightedProduct.image && (
+          <Image
+            src={highLightedProduct.image}
+            className="group-hover:scale-105 transition-transform duration-500 w-full"
+            width={920}
+            height={920}
+            alt=""
+            quality={100}
+          />
         )}
 
         <div className="absolute md:top-[140px] top-[70px] left-0  flex flex-col  gap-2    p-1 pl-2 ">
@@ -75,9 +66,8 @@ export default async function Highlights() {
 
       {otherProducts.map((product) => {
         return (
-          <Link
+          <div
             key={product.id}
-            href={`/convites/${product.slug}`}
             className="group relative col-span-3 row-span-3 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:shadow-shadowfooterdark dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary  "
           >
             {product.image && (
@@ -140,7 +130,7 @@ export default async function Highlights() {
                 })}
               </span>
             </div>
-          </Link>
+          </div>
         )
       })}
     </div>
