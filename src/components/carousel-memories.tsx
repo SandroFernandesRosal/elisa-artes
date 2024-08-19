@@ -1,7 +1,7 @@
 'use client'
 import { InvitationProps, InvitationArray } from '@/data/types/invitation'
 
-import { CornerRightDown } from 'lucide-react'
+import { Plus } from 'lucide-react'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -47,17 +47,16 @@ export default function CarouselMemories({ products }: InvitationArray) {
   }
   return (
     <div className="w-[80vw]   pt-10">
-      <div className="flex justify-between items-center px-2 py-5">
-        <h1 className="text-2xl  md:text-3xl font-bold  border-l-8 pl-2 border-primary rounded-lg">
-          Lembretes
-        </h1>{' '}
-        <Link
-          href={'/lembretes'}
-          className="flex gap-2 hover:text-primary  text-lg items-center"
-        >
-          Ver todos <CornerRightDown size={32} />{' '}
-        </Link>
+      <div className="flex flex-col justify-between items-center px-2 py-5">
+        <h1 className="text-2xl  md:text-3xl ">Lembretes</h1>{' '}
+        <h2>Não deixe que esqueçam do seu dia especial </h2>
       </div>
+      <Link
+        href={'/lembretes'}
+        className="flex justify-end gap-2 hover:text-primary  text-lg items-center"
+      >
+        Ver todos <Plus size={32} />{' '}
+      </Link>
 
       <Slider {...settings}>
         {products.map((item: InvitationProps) => {
