@@ -46,7 +46,7 @@ export default function CarouselMemories({ products }: InvitationArray) {
     ],
   }
   return (
-    <div className="w-[80vw]   pt-10">
+    <div className="w-[85vw]   pt-10">
       <div className="flex flex-col justify-between items-center px-2 py-5">
         <h1 className="text-2xl  md:text-3xl ">Lembretes</h1>{' '}
         <h2>Não deixe que esqueçam do seu dia especial </h2>

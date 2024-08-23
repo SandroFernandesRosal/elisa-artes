@@ -10,13 +10,13 @@ export default function SearchLoading() {
         <CurrentSearch />
       </Suspense>
 
-      <div className="grid grid-cols-3 gap-6">
-        <Skeleton className="h-[400px]" />
-        <Skeleton className="h-[400px]" />
-        <Skeleton className="h-[400px]" />
-        <Skeleton className="h-[400px]" />
-        <Skeleton className="h-[400px]" />
-        <Skeleton className="h-[400px]" />
+      <div className="flex justify-center flex-wrap gap-5 mt-[100px]">
+        <Skeleton className="h-[300px] w-[150px]" />
+        <Skeleton className="h-[300px] w-[150px]" />
+        <Skeleton className="h-[300px] w-[150px]" />
+        <Skeleton className="h-[300px] w-[150px]" />
+        <Skeleton className="h-[300px] w-[150px]" />
+        <Skeleton className="h-[300px] w-[150px]" />
       </div>
     </div>
   )

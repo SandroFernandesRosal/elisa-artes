@@ -48,17 +48,19 @@ export default function ProjectLine({
       <div className=" flex  flex-col justify-between items-center h-[120px]  py-1">
         <h1 className="font-semibold text-center ">{title}</h1>
 
-        <span className="flex  items-center  rounded-full bg-primary px-4 font-semibold">
-          {price.toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-            minimumFractionDigits: 0,
-            maximumFractionDigits: 0,
-          })}
-        </span>
-        <Link href={`/${page}/${slug}`} className="text-primary font-bold mt-5">
-          <button>Saiba mais</button>
-        </Link>
+        <div className="flex flex-col gap-5">
+          <span className="flex  items-center  rounded-full bg-primary px-4 font-semibold">
+            {price.toLocaleString('pt-BR', {
+              style: 'currency',
+              currency: 'BRL',
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 0,
+            })}
+          </span>
+          <Link href={`/${page}/${slug}`} className="text-primary font-bold">
+            <button>Saiba mais</button>
+          </Link>
+        </div>
       </div>
     </div>
   )
