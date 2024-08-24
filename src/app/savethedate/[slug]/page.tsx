@@ -2,7 +2,6 @@ import { api } from '@/data/api'
 import { SaveDateProps } from '@/data/types/save-date'
 import { Metadata } from 'next'
 
-import Image from 'next/image'
 import Link from 'next/link'
 
 interface ProductProps {
@@ -37,24 +36,14 @@ export default async function ProductPage({ params }: ProductProps) {
   const product = await getProduct(params.slug)
   return (
     <div className="relative lg:grid my-8  lg:grid-cols-3 gap-4 flex md:items-center flex-col-reverse pt-[100px] overflow-hidden">
-      <div className="lg:col-span-2 overflow-hidden flex justify-center mx-5">
-        {product.image && (
-          <Image
-            src={product.image}
-            alt=""
-            width={1000}
-            height={1000}
-            quality={100}
-            className=""
-          />
-        )}
-
+      <div className="lg:col-span-2 overflow-hidden flex justify-center mx-5 dark:shadow-shadowfooterdark dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none   border-transparent">
         {product.video && (
           <video
             width="500"
             height="500"
             controls
-            preload="true"
+            poster={product.image}
+            preload="metadata"
             className="group-hover:scale-105  transition-transform duration-500 mx-[5%] "
           >
             <source src={product.video} type="video/mp4" />

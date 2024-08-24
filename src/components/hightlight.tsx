@@ -32,18 +32,10 @@ export default async function Highlights() {
           />
         )}
 
-        <div className="absolute md:top-[140px] top-[70px] left-0  flex flex-col  gap-2    p-1 pl-2 ">
-          <div>
-            <h2 className="text-xl md:text-3xl text-primary font-bold">Tema</h2>
-            <h1 className="text-2xl md:text-5xl font-bold">
-              {highLightedProduct.theme}
-            </h1>
-            <p className="md:text-lg">{highLightedProduct.description}</p>
-          </div>
-
+        <div className="absolute top-10  w-full flex justify-end mr-10">
           <Link
             href={`/convites`}
-            className="border-b-2 border-primary w-[100px] font-semibold md:text-lg md:w-[110px]"
+            className="font-bold px-2 h-12  flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 "
           >
             Ver modelos
           </Link>
@@ -100,28 +92,21 @@ export default async function Highlights() {
               </video>
             )}
 
-            <div className="absolute md:top-[70px] top-[25px] left-0  flex flex-col  gap-2    p-1 pl-2 ">
-              <div>
-                <h2 className="text-primary md:text-xl font-bold">Tema</h2>
-                <h1 className="text-lg font-bold md:text-2xl">
-                  {product.theme}
-                </h1>
-              </div>
-
+            <div className="absolute top-10  w-full flex justify-end mr-10">
               <Link
-                href={`/filtros`}
-                className="border-b-2 border-primary w-[100px] font-semibold md:text-lg md:w-[110px]"
+                href={product.theme === 'urso' ? '/filtros' : '/savethedate'}
+                className="font-bold px-2 h-12  flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 "
               >
                 Ver modelos
               </Link>
             </div>
 
-            <div className="absolute bottom-2  md:h-12 h-8 flex items-center gap-2 max-w-[280px]  w-[95%] md:w-[100%] justify-between rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-2">
+            <div className="absolute bottom-5  md:h-12 h-8 flex items-center gap-2 max-w-[280px]  w-[95%] md:w-[100%] justify-between rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-2">
               <span className="text-sm truncate font-bold">
                 {product.title}
               </span>
 
-              <span className="flex h-full items-center justify-center rounded-full bg-primary px-4 font-semibold">
+              <span className="flex h-full text-black items-center justify-center rounded-full bg-primary px-4 font-semibold">
                 {product.price.toLocaleString('pt-BR', {
                   style: 'currency',
                   currency: 'BRL',

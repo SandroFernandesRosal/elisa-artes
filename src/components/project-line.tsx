@@ -49,7 +49,7 @@ export default function ProjectLine({
         <h1 className="font-semibold text-center ">{title}</h1>
 
         <div className="flex flex-col gap-5">
-          <span className="flex  items-center  rounded-full bg-primary px-4 font-semibold">
+          <span className="flex  items-center  rounded-full bg-primary justify-center font-semibold">
             {price.toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL',
@@ -58,7 +58,7 @@ export default function ProjectLine({
             })}
           </span>
           <Link href={`/${page}/${slug}`} className="text-primary font-bold">
-            <button>Saiba mais</button>
+            <button>Ver detalhes</button>
           </Link>
         </div>
       </div>

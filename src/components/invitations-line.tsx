@@ -1,12 +1,12 @@
 'use client'
 import { InvitationProps, InvitationArray } from '@/data/types/invitation'
 import { useState } from 'react'
-import { useDisplay } from '@/store/useStore'
+import { useCategory } from '@/store/useStore'
 import { MdArrowBack, MdArrowForward } from 'react-icons/md'
 import ProjectLine from './project-line'
 
 export default function InvitationsLine({ products }: InvitationArray) {
-  const { display } = useDisplay()
+  const { category } = useCategory()
 
   const [offset, setOffset] = useState(0)
   const [isDisabledNext, setIsDisabledNext] = useState(false)
@@ -18,12 +18,22 @@ export default function InvitationsLine({ products }: InvitationArray) {
     (project: InvitationProps) => project.title,
   )
 
+  const categoryFilteredProjects = filteredProjects.filter(
+    (project: InvitationProps) => {
+      if (category === 'todos') {
+        return true
+      }
+
+      return project.category === category
+    },
+  )
+
   const displayedProjects =
-    display === 'destaque'
+    category === 'destaques'
       ? filteredProjects.filter(
           (project: InvitationProps) => project.featured === true,
         )
-      : filteredProjects
+      : categoryFilteredProjects
 
   const loadNextPage = () => {
     if (displayedProjects.length < offset + projectsPerPage) {
@@ -71,7 +81,6 @@ export default function InvitationsLine({ products }: InvitationArray) {
 
       {projectsToDisplay.length > 0 && (
         <>
-          {' '}
           <div className="flex mt-5">
             <button
               onClick={loadPreviousPage}
@@ -95,10 +104,10 @@ export default function InvitationsLine({ products }: InvitationArray) {
             >
               <MdArrowForward className="text-3xl font-bold text-primary" />
             </button>
-          </div>{' '}
-          <p className=" font-bold">
+          </div>
+          <p className="font-bold">
             Página {displayCurrentPage} de {totalPages}
-          </p>{' '}
+          </p>
         </>
       )}
     </>

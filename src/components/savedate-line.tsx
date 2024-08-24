@@ -1,12 +1,12 @@
 'use client'
 import { SaveDateProps, SaveDateArray } from '@/data/types/save-date'
 import { useState } from 'react'
-import { useDisplay } from '@/store/useStore'
+import { useCategory } from '@/store/useStore'
 import { MdArrowBack, MdArrowForward } from 'react-icons/md'
 import ProjectLine from './project-line'
 
 export default function SaveDateLine({ products }: SaveDateArray) {
-  const { display } = useDisplay()
+  const { category } = useCategory()
 
   const [offset, setOffset] = useState(0)
   const [isDisabledNext, setIsDisabledNext] = useState(false)
@@ -18,12 +18,22 @@ export default function SaveDateLine({ products }: SaveDateArray) {
     (project: SaveDateProps) => project.title,
   )
 
+  const categoryFilteredProjects = filteredProjects.filter(
+    (project: SaveDateProps) => {
+      if (category === 'todos') {
+        return true
+      }
+
+      return project.category === category
+    },
+  )
+
   const displayedProjects =
-    display === 'destaque'
+    category === 'destaques'
       ? filteredProjects.filter(
           (project: SaveDateProps) => project.featured === true,
         )
-      : filteredProjects
+      : categoryFilteredProjects
 
   const loadNextPage = () => {
     if (displayedProjects.length < offset + projectsPerPage) {

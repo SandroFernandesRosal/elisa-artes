@@ -1,9 +1,9 @@
 import { api } from '@/data/api'
 
-import SelectDisplay from '@/components/select-display'
 import SizeProject from '@/components/size-project'
 
 import SaveDateLine from '@/components/savedate-line'
+import SelectCategory from '@/components/select-category'
 
 export default async function SaveDatePage() {
   const response = await api('/invitations', {
@@ -20,7 +20,7 @@ export default async function SaveDatePage() {
       <span className="border-b-4 pb-2 w-24  border-primary  text-3xl mb-5"></span>
       <div className="flex flex-col items-center mb-5 ">
         <div className="flex gap-2">
-          <SelectDisplay />
+          <SelectCategory />
           <SizeProject />
         </div>
       </div>

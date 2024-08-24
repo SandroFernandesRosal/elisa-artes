@@ -5,7 +5,7 @@ export const useSize = create((set) => ({
   setSize: (state) => set({ size: state }),
 }))
 
-export const useDisplay = create((set) => ({
-  display: 'destaque',
-  setDisplay: (state) => set({ display: state }),
+export const useCategory = create((set) => ({
+  category: 'todos',
+  setCategory: (state) => set({ category: state }),
 }))

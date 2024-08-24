@@ -1,12 +1,12 @@
 'use client'
 import { FilterProps, FilterArray } from '@/data/types/filter'
 import { useState } from 'react'
-import { useDisplay } from '@/store/useStore'
+import { useCategory } from '@/store/useStore'
 import { MdArrowBack, MdArrowForward } from 'react-icons/md'
 import ProjectLine from './project-line'
 
 export default function FiltersLine({ products }: FilterArray) {
-  const { display } = useDisplay()
+  const { category } = useCategory()
 
   const [offset, setOffset] = useState(0)
   const [isDisabledNext, setIsDisabledNext] = useState(false)
@@ -18,12 +18,22 @@ export default function FiltersLine({ products }: FilterArray) {
     (project: FilterProps) => project.title,
   )
 
+  const categoryFilteredProjects = filteredProjects.filter(
+    (project: FilterProps) => {
+      if (category === 'todos') {
+        return true
+      }
+
+      return project.category === category
+    },
+  )
+
   const displayedProjects =
-    display === 'destaque'
+    category === 'destaques'
       ? filteredProjects.filter(
           (project: FilterProps) => project.featured === true,
         )
-      : filteredProjects
+      : categoryFilteredProjects
 
   const loadNextPage = () => {
     if (displayedProjects.length < offset + projectsPerPage) {
