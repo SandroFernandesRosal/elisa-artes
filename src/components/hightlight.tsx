@@ -28,8 +28,9 @@ export default async function Highlights() {
             width={500}
             height={500}
             alt={highLightedProduct.title}
-            priority
             quality={100}
+            sizes="(max-width: 500px) 50vw, 100vw"
+            priority
           />
         )}
 
@@ -70,15 +71,15 @@ export default async function Highlights() {
                 width={500}
                 height={500}
                 alt={product.title}
-                priority
                 quality={100}
+                sizes="(max-width: 500px) 50vw, 100vw"
               />
             )}
 
-            <div className="absolute top-10  w-full flex justify-end mr-10">
+            <div className="absolute top-10  w-full flex justify-end md:mr-10 mr-3">
               <Link
                 href={product.theme === 'urso' ? '/filtros' : '/savethedate'}
-                className="font-bold px-2 h-12  flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 "
+                className="font-bold px-2   flex items-center gap-2   rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 "
               >
                 Ver modelos
               </Link>
