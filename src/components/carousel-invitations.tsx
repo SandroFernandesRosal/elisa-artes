@@ -46,7 +46,7 @@ export default function CarouselInvitations({ products }: InvitationArray) {
     ],
   }
   return (
-    <div className="w-[85vw]   pt-10">
+    <div className="w-[85vw] lg:w-[65vw]   pt-10">
       <div className="flex flex-col justify-between items-center px-2 py-5">
         <h1 className="text-2xl  md:text-3xl ">Convites digitais</h1>{' '}
         <h2>Seu dia especial começa com um convite inesquecível </h2>

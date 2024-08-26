@@ -46,7 +46,7 @@ export default function CarouselSaveDate({ products }: InvitationArray) {
     ],
   }
   return (
-    <div className="w-[85vw]   pt-10">
+    <div className="w-[85vw] lg:w-[65vw]  pt-10">
       <div className="flex flex-col justify-between items-center px-2 py-5">
         <h1 className="text-2xl  md:text-3xl ">Save the date</h1>{' '}
         <h2>Salve esse dia especial na agenda</h2>

@@ -19,15 +19,16 @@ async function getFeaturedProducts(): Promise<InvitationProps[]> {
 export default async function Highlights() {
   const [highLightedProduct, ...otherProducts] = await getFeaturedProducts()
   return (
-    <div className="grid  lg:grid-cols-9 lg:grid-rows-6 gap-4 pt-8 md:pt-12">
-      <div className=" group relative  col-span-6 row-span-6 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary  ">
+    <div className="grid w-[85vw] lg:w-[65vw] lg:grid-cols-9 lg:grid-rows-6 gap-4 pt-8 md:pt-12">
+      <div className=" group relative  col-span-6 row-span-6 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary w-full">
         {highLightedProduct.image && (
           <Image
             src={highLightedProduct.image}
-            className="group-hover:scale-105 transition-transform duration-500 w-full"
-            width={920}
-            height={920}
-            alt=""
+            className="w-full group-hover:scale-105 transition-transform duration-500 "
+            width={500}
+            height={500}
+            alt={highLightedProduct.title}
+            priority
             quality={100}
           />
         )}
@@ -60,36 +61,18 @@ export default async function Highlights() {
         return (
           <div
             key={product.id}
-            className="group relative col-span-3 row-span-3 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:shadow-shadowfooterdark dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary  "
+            className="group relative col-span-3 row-span-3 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:shadow-shadowfooterdark dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary  w-full"
           >
             {product.image && (
               <Image
                 src={product.image}
                 className="group-hover:scale-105 transition-transform duration-500 w-full"
-                width={920}
-                height={920}
-                alt=""
+                width={500}
+                height={500}
+                alt={product.title}
+                priority
                 quality={100}
               />
-            )}
-
-            {product.video && (
-              <video
-                width="500"
-                height="500"
-                controls
-                preload="metadata"
-                className="group-hover:scale-105  transition-transform duration-500 w-full"
-              >
-                <source src={product.video} type="video/mp4" />
-                <track
-                  src={product.video}
-                  kind="subtitles"
-                  srcLang="pt-br"
-                  label="Portuguese"
-                />
-                Your browser does not support the video tag.
-              </video>
             )}
 
             <div className="absolute top-10  w-full flex justify-end mr-10">
