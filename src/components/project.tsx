@@ -20,10 +20,10 @@ export default function Project({
 }: Projectprops) {
   return (
     <Suspense fallback={<div>Carregando...</div>}>
-      <div className="h-full my-2 lg:my-4 border-zinc-300 dark:border-zinc-800 dark:border-[1px] shadow-shadowlight  dark:shadow-none hover:border-[1px] border-transparent group max-w-[300px] ">
+      <div className="h-full my-2 lg:my-4 border-zinc-300 dark:border-zinc-800 dark:border-[1px] shadow-shadowlight  dark:shadow-none hover:border-[1px] border-transparent group max-w-[300px] overflow-hidden">
         {Image && (
           <Image
-            className="w-full"
+            className="w-full group-hover:scale-105  transition-transform duration-500"
             src={image}
             alt={title}
             width={300}
@@ -37,7 +37,7 @@ export default function Project({
         <h1 className="font-semibold text-center ">{title}</h1>
 
         <div className="flex flex-col gap-5">
-          <span className="flex  items-center text-black rounded-full bg-primary justify-center font-semibold">
+          <span className="flex  items-center text-black rounded-full bg-primary justify-center font-bold">
             {price.toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL',
@@ -45,7 +45,7 @@ export default function Project({
               maximumFractionDigits: 0,
             })}
           </span>
-          <Link href={`/${page}/${slug}`} className="text-primary font-bold">
+          <Link href={`/${page}/${slug}`} className="font-bold">
             <button>Ver detalhes</button>
           </Link>
         </div>

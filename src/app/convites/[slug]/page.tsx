@@ -137,7 +137,7 @@ export default async function ProductPage({ params }: ProductProps) {
               })}
             </span>
             <Link
-              href={'/'}
+              href={`https://api.whatsapp.com/send/?phone=+5521935006953&text=Quero%20esse&type=phone_number&app_absent=0&source_url=https://elisa-artes.vercel.app/convites/${product.slug}&context=https://elisa-artes.vercel.app/convites/${product.slug}&icebreaker=Quero%20esse`}
               className="inline-block rounded-full bg-primary px-5 py-2.5 font-semibold lg:truncate"
             >
               Quero esse modelo

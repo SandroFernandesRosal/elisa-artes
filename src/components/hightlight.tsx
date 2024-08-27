@@ -19,7 +19,7 @@ async function getFeaturedProducts(): Promise<InvitationProps[]> {
 export default async function Highlights() {
   const [highLightedProduct, ...otherProducts] = await getFeaturedProducts()
   return (
-    <div className="grid w-[85vw] lg:w-[65vw] lg:grid-cols-9 lg:grid-rows-6 gap-4 pt-8 md:pt-12">
+    <div className="grid w-[85vw] lg:w-[65vw] lg:grid-cols-9 lg:grid-rows-6 gap-3 pt-8 md:pt-12">
       <div className=" group relative  col-span-6 row-span-6 rounded-lg bg-bglightsecundary dark:bg-bgdarksecundary overflow-hidden flex justify-center items-end  dark:border-[1px] dark:border-zinc-800 shadow-shadowlight  dark:shadow-none hover:border-primary hover:border-[1px] border-transparent dark:hover:border-primary w-full">
         {highLightedProduct.image && (
           <Image
@@ -37,17 +37,17 @@ export default async function Highlights() {
         <div className="absolute top-10  w-full flex justify-end mr-10">
           <Link
             href={`/convites`}
-            className="font-bold px-2 h-12  flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 "
+            className="font-bold px-2 h-12 truncate flex justify-center items-center gap-2 w-[55%] max-w-[130px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 "
           >
             Ver modelos
           </Link>
         </div>
 
-        <div className="absolute bottom-10  h-12  flex items-center gap-2 max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-2 ">
+        <div className="absolute bottom-10  h-12  flex items-center justify-between gap-2 w-[95%] max-w-[350px]  rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-2 ">
           <span className="text-sm truncate font-bold">
             {highLightedProduct.title}
           </span>
-          <span className="flex h-full items-center justify-center rounded-full bg-primary px-4 font-semibold text-black ">
+          <span className="flex h-full items-center justify-center rounded-full bg-primary px-3 md:px-4 font-semibold text-black ">
             {highLightedProduct.price.toLocaleString('pt-BR', {
               style: 'currency',
               currency: 'BRL',
@@ -79,18 +79,18 @@ export default async function Highlights() {
             <div className="absolute top-10  w-full flex justify-end md:mr-10 mr-3">
               <Link
                 href={product.theme === 'urso' ? '/filtros' : '/savethedate'}
-                className="font-bold px-2   flex items-center gap-2   rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 "
+                className="font-bold px-2 truncate  flex items-center gap-2 [55%] max-w-[130px] text-sm md:text-lg rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 "
               >
                 Ver modelos
               </Link>
             </div>
 
-            <div className="absolute bottom-5  md:h-12 h-8 flex items-center gap-2 max-w-[280px]  w-[95%] md:w-[100%] justify-between rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-2">
+            <div className="absolute bottom-5  md:h-12 h-8 flex items-center gap-2 w-[95%] max-w-[350px] md:w-[100%] justify-between rounded-full border-2 border-zinc-500 dark:bg-bgdarksecundary/70 bg-bglightsecundary/70 p-1 pl-2 text-sm md:text-lg">
               <span className="text-sm truncate font-bold">
                 {product.title}
               </span>
 
-              <span className="flex h-full text-black items-center justify-center rounded-full bg-primary px-4 font-semibold">
+              <span className="flex h-full text-black items-center justify-center rounded-full bg-primary px-2 md:px-4 font-semibold">
                 {product.price.toLocaleString('pt-BR', {
                   style: 'currency',
                   currency: 'BRL',
