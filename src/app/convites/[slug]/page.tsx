@@ -96,7 +96,7 @@ export default async function ProductPage({ params }: ProductProps) {
   const productFilter = await getFilter()
   const productSavethedate = await getSavethedate()
 
-  const whatsappLink = `https://api.whatsapp.com/send?phone=+5521935006953&text=Olá, gostaria de saber mais sobre o modelo ${product.title}.`
+  const whatsappLink = `https://api.whatsapp.com/send?phone=+5521935006953&text=Olá, gostaria de saber mais sobre o modelo https://elisa-artes.vercel.app/convites/${product.slug}.`
   return (
     <div>
       {' '}
