@@ -95,6 +95,8 @@ export default async function ProductPage({ params }: ProductProps) {
   const productMemory = await getMemory()
   const productFilter = await getFilter()
   const productSavethedate = await getSavethedate()
+
+  const whatsappLink = `https://api.whatsapp.com/send?phone=+5521935006953&text=Olá, gostaria de saber mais sobre o modelo ${product.title}.`
   return (
     <div>
       {' '}
@@ -137,7 +139,7 @@ export default async function ProductPage({ params }: ProductProps) {
               })}
             </span>
             <Link
-              href={`https://api.whatsapp.com/send/?phone=+5521935006953&text=Quero%20esse&type=phone_number&app_absent=0&source_url=https://elisa-artes.vercel.app/convites/${product.slug}&context=https://elisa-artes.vercel.app/convites/${product.slug}&icebreaker=Quero%20esse`}
+              href={whatsappLink}
               className="inline-block rounded-full bg-primary px-5 py-2.5 font-semibold lg:truncate"
             >
               Quero esse modelo
