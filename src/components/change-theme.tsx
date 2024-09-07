@@ -14,6 +14,7 @@ export default function ChangeTheme() {
   return (
     <ReactSwitch
       className="flex items-center justify-center shadow-shadowlight dark:shadow-shadowdark "
+      aria-label="Tema light ou dark"
       onChange={changeTheme}
       checked={theme === 'light'}
       checkedIcon={

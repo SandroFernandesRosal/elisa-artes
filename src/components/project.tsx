@@ -45,7 +45,11 @@ export default function Project({
               maximumFractionDigits: 0,
             })}
           </span>
-          <Link href={`/${page}/${slug}`} className="font-bold">
+          <Link
+            aria-label="abrir projeto"
+            href={`/${page}/${slug}`}
+            className="font-bold"
+          >
             <button>Ver detalhes</button>
           </Link>
         </div>
